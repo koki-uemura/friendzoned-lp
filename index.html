@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Friendzoned™ — One mutual changes everything.</title>
+<title>Friendzoned™ — 一人の共通の友達が、すべてを変える。</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:       #faf9f5;
-    --dark:     #141413;
-    --mid:      #b0aea5;
-    --light-gr: #e8e6dc;
-    --orange:   #d97757;
-    --border:   #e8e6dc;
+    --bg:      #faf9f5;
+    --dark:    #141413;
+    --mid:     #b0aea5;
+    --light:   #e8e6dc;
+    --orange:  #d97757;
+    --border:  #e8e6dc;
   }
 
   html { scroll-behavior: smooth; }
@@ -21,7 +21,7 @@
   body {
     background: var(--bg);
     color: var(--dark);
-    font-family: 'Times New Roman', Times, serif;
+    font-family: -apple-system, 'SF Pro Text', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
     font-size: 16px;
     line-height: 1.7;
     overflow-x: hidden;
@@ -46,7 +46,28 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     color: var(--dark);
+    text-decoration: none;
   }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .lang-toggle {
+    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+    background: none;
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-toggle:hover { border-color: var(--mid); color: var(--dark); }
 
   .nav-cta {
     font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
@@ -71,21 +92,20 @@
   }
 
   .eyebrow {
-    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
     font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--mid);
     margin-bottom: 2rem;
   }
 
   h1 {
-    font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    font-family: -apple-system, 'SF Pro Display', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
     font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.025em;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--dark);
     margin-bottom: 2rem;
   }
@@ -93,9 +113,9 @@
   h1 .accent { color: var(--orange); }
 
   .hero-body {
-    font-size: 18px;
+    font-size: 17px;
     color: #4e4c49;
-    line-height: 1.85;
+    line-height: 1.9;
     max-width: 540px;
     margin-bottom: 2.8rem;
   }
@@ -108,7 +128,6 @@
   }
 
   .btn-primary {
-    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.04em;
@@ -122,7 +141,6 @@
   .btn-primary:hover { background: var(--orange); }
 
   .btn-text {
-    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
     font-size: 13px;
     color: var(--mid);
     text-decoration: none;
@@ -138,7 +156,6 @@
   }
 
   .section-label {
-    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -148,11 +165,11 @@
   }
 
   .section-heading {
-    font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-family: -apple-system, 'SF Pro Display', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.15;
+    line-height: 1.2;
     color: var(--dark);
     margin-bottom: 3rem;
   }
@@ -170,7 +187,6 @@
   .step:first-child { border-top: 1px solid var(--border); }
 
   .step-num {
-    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
     font-size: 11px;
     font-weight: 500;
     color: var(--mid);
@@ -179,8 +195,8 @@
   }
 
   .step h3 {
-    font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-    font-size: 1.1rem;
+    font-family: -apple-system, 'SF Pro Display', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     margin-bottom: 0.5rem;
@@ -188,23 +204,37 @@
   }
 
   .step p {
-    font-size: 15px;
+    font-size: 14px;
     color: #6b6963;
-    line-height: 1.8;
+    line-height: 1.9;
   }
 
   .quote-block {
     border-left: 3px solid var(--orange);
-    padding: 1.4rem 2rem;
+    padding: 1.6rem 2rem;
     background: #f2f0ea;
-    margin-top: 0;
   }
 
-  .quote-block p {
-    font-size: 1.15rem;
-    font-style: italic;
+  .quote-block .quote-text {
+    font-size: 1.05rem;
     color: var(--dark);
-    line-height: 1.75;
+    line-height: 1.85;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+  }
+
+  .quote-block .quote-translation {
+    font-size: 0.95rem;
+    color: #4e4c49;
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+
+  .quote-block .research-note {
+    font-size: 11px;
+    color: var(--mid);
+    line-height: 1.6;
+    letter-spacing: 0.02em;
   }
 
   .value-grid {
@@ -222,7 +252,7 @@
   }
 
   .value-cell h4 {
-    font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, 'SF Pro Display', 'Hiragino Sans', 'Yu Gothic', sans-serif;
     font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 0.6rem;
@@ -230,9 +260,9 @@
   }
 
   .value-cell p {
-    font-size: 14px;
+    font-size: 13px;
     color: #6b6963;
-    line-height: 1.8;
+    line-height: 1.9;
   }
 
   .contact-section {
@@ -244,19 +274,19 @@
   }
 
   .contact-section h2 {
-    font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-family: -apple-system, 'SF Pro Display', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.15;
+    line-height: 1.2;
     margin-bottom: 1rem;
   }
 
   .contact-section .sub {
-    font-size: 16px;
+    font-size: 15px;
     color: #6b6963;
     margin-bottom: 2.5rem;
-    line-height: 1.85;
+    line-height: 1.9;
   }
 
   .form-wrap {
@@ -274,7 +304,7 @@
     background: #fff;
     border: 1px solid var(--border);
     color: var(--dark);
-    font-family: 'Times New Roman', Times, serif;
+    font-family: -apple-system, 'SF Pro Text', 'Hiragino Sans', sans-serif;
     font-size: 15px;
     padding: 0.8rem 1.1rem;
     outline: none;
@@ -288,7 +318,7 @@
   .form-wrap textarea:focus { border-color: var(--orange); }
 
   .form-wrap input::placeholder,
-  .form-wrap textarea::placeholder { color: var(--mid); font-style: italic; }
+  .form-wrap textarea::placeholder { color: var(--mid); }
 
   .form-wrap button {
     font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
@@ -322,7 +352,6 @@
   .footer-note {
     font-size: 12px;
     color: var(--mid);
-    font-style: italic;
   }
 
   .fade {
@@ -338,6 +367,7 @@
 
   @media (max-width: 560px) {
     nav { padding: 1.2rem 1.5rem; }
+    .nav-right { gap: 0.6rem; }
     .hero, .section, .contact-section { padding-left: 1.5rem; padding-right: 1.5rem; }
     .value-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
@@ -347,101 +377,155 @@
 <body>
 
 <nav>
-  <span class="logo">Friendzoned™</span>
-  <a href="#contact" class="nav-cta">Request access</a>
+  <a class="logo" href="#">Friendzoned™</a>
+  <div class="nav-right">
+    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+    <a href="#contact" class="nav-cta" data-ja="導入を相談する" data-en="Get in touch">導入を相談する</a>
+  </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <p class="eyebrow fade">For event organizers</p>
-  <h1 class="fade">One mutual<br><span class="accent">changes everything.</span></h1>
-  <p class="hero-body fade">
-    Every event is full of people who already know each other — they just don't know it yet. Friendzoned surfaces those connections the moment guests walk through the door.
+  <p class="eyebrow fade" data-ja="イベント主催者へ" data-en="For event organizers">イベント主催者へ</p>
+  <h1 class="fade">
+    <span data-ja="「え、なんで" data-en="&quot;Wait,">「え、なんで</span><br>
+    <span class="accent" data-ja="この人知ってるの？」" data-en="you know them too?&quot;">この人知ってるの？」</span>
+  </h1>
+  <p class="hero-body fade"
+     data-ja="SNSを交換した瞬間に起きる、あの現象。初めて会う人でも、共通の友達がいることは多いものです。Friendzonedは、それをすべての参加者の間で、会場に入った瞬間に起こします。"
+     data-en="That moment when you swap contact info and suddenly realize you have five friends in common. It happens all the time. Friendzoned makes it happen for every participant, the moment they walk in.">
+    SNSを交換した瞬間に起きる、あの現象。初めて会う人でも、共通の友達がいることは多いものです。Friendzonedは、それをすべての参加者の間で、会場に入った瞬間に起こします。
   </p>
   <div class="cta-row fade">
-    <a href="#contact" class="btn-primary">Request access</a>
-    <a href="#how" class="btn-text">See how it works ↓</a>
+    <a href="#contact" class="btn-primary" data-ja="導入を相談する" data-en="Get in touch">導入を相談する</a>
+    <a href="#how" class="btn-text" data-ja="仕組みを見る ↓" data-en="See how it works ↓">仕組みを見る ↓</a>
   </div>
 </div>
 
+<!-- HOW IT WORKS -->
 <div class="section" id="how">
-  <p class="section-label">How it works</p>
-  <p class="section-heading">Meet everybody's everybody.</p>
+  <p class="section-label" data-ja="仕組み" data-en="How it works">仕組み</p>
+  <p class="section-heading" data-ja="「どこ出身？」「大学は？」もう聞かなくていい。" data-en="No more &quot;Where are you from?&quot;<br>No more &quot;Where did you go to school?&quot;">「どこ出身？」「大学は？」もう聞かなくていい。</p>
   <div class="steps">
     <div class="step">
       <span class="step-num">01</span>
       <div>
-        <h3>Participants upload before the event</h3>
-        <p>A few days ahead, attendees upload 5 screenshots of their Instagram following list. No account linking. No passwords. Just a few taps.</p>
+        <h3 data-ja="イベント前に、スクショを送るだけ。" data-en="Upload before the event">イベント前に、スクショを送るだけ。</h3>
+        <p data-ja="数日前に、参加者の皆さんにInstagramのフォロー中リストのスクリーンショットを5枚送っていただきます。アカウント連携も、パスワード入力も必要ありません。" data-en="A few days ahead, attendees upload 5 screenshots of their Instagram following list. No account linking, no passwords required.">数日前に、参加者の皆さんにInstagramのフォロー中リストのスクリーンショットを5枚送っていただきます。アカウント連携も、パスワード入力も必要ありません。</p>
       </div>
     </div>
     <div class="step">
       <span class="step-num">02</span>
       <div>
-        <h3>Friendzoned maps the connections</h3>
-        <p>Our system reads and cross-references every list. Who knows who, and how many people they have in common — all processed before anyone arrives.</p>
+        <h3 data-ja="繋がりを、自動でマッピング。" data-en="Friendzoned maps the connections">繋がりを、自動でマッピング。</h3>
+        <p data-ja="システムがすべてのリストを照合します。誰と誰が繋がっているか、共通の知人は何人いるか。会場に誰かが入る前に、すべての処理が完了しています。" data-en="Our system reads and cross-references every list. It figures out who knows who and how many people they have in common. All done before anyone arrives.">システムがすべてのリストを照合します。誰と誰が繋がっているか、共通の知人は何人いるか。会場に誰かが入る前に、すべての処理が完了しています。</p>
       </div>
     </div>
     <div class="step">
       <span class="step-num">03</span>
       <div>
-        <h3>Scan on arrival</h3>
-        <p>At the door, guests scan a QR code. Instantly see which attendees share mutual connections with them — and a suggested opener for each one.</p>
+        <h3 data-ja="入場時に、QRをスキャン。" data-en="Scan on arrival">入場時に、QRをスキャン。</h3>
+        <p data-ja="ドアでQRコードをスキャンすると、共通の知人がいる参加者の一覧と、それぞれへの会話のきっかけが表示されます。" data-en="At the door, guests scan a QR code. They instantly see which attendees share mutual connections with them, along with a suggested way to start the conversation.">ドアでQRコードをスキャンすると、共通の知人がいる参加者の一覧と、それぞれへの会話のきっかけが表示されます。</p>
       </div>
     </div>
     <div class="step">
       <span class="step-num">04</span>
       <div>
-        <h3>Conversations that don't need warming up</h3>
-        <p>"Wait, you know Sho too?" The ice is already broken. Friendzoned turns a room of strangers into a room of almost-friends.</p>
+        <h3 data-ja="もう、初対面じゃない。" data-en="Not strangers anymore">もう、初対面じゃない。</h3>
+        <p data-ja="「え、○○さんのこと知ってるの？」その一言が、距離を一気に縮めます。共通の友達がいるだけで、初めて会う相手でも不思議と安心感が生まれます。" data-en="&quot;Wait, you know Sho too?&quot; That one line does all the work. A mutual friend is all it takes to make a stranger feel familiar.">「え、○○さんのこと知ってるの？」その一言が、距離を一気に縮めます。共通の友達がいるだけで、初めて会う相手でも不思議と安心感が生まれます。</p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- RESEARCH QUOTE -->
 <div class="section" style="padding-top: 2rem; border-top: none;">
   <div class="quote-block">
-    <p>"That moment when you realize you have a mutual friend — it changes everything about how a conversation begins."</p>
+    <p class="quote-text"
+       data-ja='"Knowledge of social networks may provide valuable clues regarding how unfamiliar others will behave."'
+       data-en='"Knowledge of social networks may provide valuable clues regarding how unfamiliar others will behave."'>
+      "Knowledge of social networks may provide valuable clues regarding how unfamiliar others will behave."
+    </p>
+    <p class="quote-translation"
+       data-ja="「その人がどんな人か、ソーシャルネットワークを知るだけで、多くのことがわかる。」"
+       data-en="">
+      「その人がどんな人か、ソーシャルネットワークを知るだけで、多くのことがわかる。」
+    </p>
+    <p class="research-note"
+       data-ja="— Schwyck et al., Personality and Social Psychology Bulletin, 2023（PMC11080385）"
+       data-en="— Schwyck et al., Personality and Social Psychology Bulletin, 2023 (PMC11080385)">
+      — Schwyck et al., Personality and Social Psychology Bulletin, 2023（PMC11080385）
+    </p>
   </div>
 </div>
 
+<!-- VALUE PROPS -->
 <div class="section">
-  <p class="section-label">For organizers</p>
+  <p class="section-label" data-ja="主催者にとっての価値" data-en="For organizers">主催者にとっての価値</p>
   <div class="value-grid">
     <div class="value-cell">
-      <h4>Richer events</h4>
-      <p>Attendees leave with more real connections than they expected. That's the metric that makes them come back.</p>
+      <h4 data-ja="出会いの質が変わる。" data-en="Better connections">出会いの質が変わる。</h4>
+      <p data-ja="名刺を交換して終わり、ではなく。その日のうちに連絡を取り合うような出会いが生まれます。" data-en="Not just exchanged cards. The kind of connection people actually follow up on.">名刺を交換して終わり、ではなく。その日のうちに連絡を取り合うような出会いが生まれます。</p>
     </div>
     <div class="value-cell">
-      <h4>Unique network data</h4>
-      <p>See the graph that formed at your event. No other event tool captures this — and brands are willing to pay for it.</p>
+      <h4 data-ja="他にはないデータ。" data-en="Data no one else has">他にはないデータ。</h4>
+      <p data-ja="イベントで実際に生まれたネットワークを見ることができます。どのツールにもできないことです。" data-en="See the actual network that formed at your event. No other tool can show you this.">イベントで実際に生まれたネットワークを見ることができます。どのツールにもできないことです。</p>
     </div>
     <div class="value-cell">
-      <h4>Zero friction entry</h4>
-      <p>No app download. No account creation. One QR scan at the door is all guests need on the day.</p>
+      <h4 data-ja="アプリ不要。" data-en="No app needed">アプリ不要。</h4>
+      <p data-ja="ダウンロードもアカウント作成も必要ありません。当日はQRコードを一回スキャンするだけです。" data-en="No download, no account. One QR scan at the door and guests are in.">ダウンロードもアカウント作成も必要ありません。当日はQRコードを一回スキャンするだけです。</p>
     </div>
     <div class="value-cell">
-      <h4>Privacy first</h4>
-      <p>Screenshots stay between the participant and the event. No Instagram credentials. No data sold. Ever.</p>
+      <h4 data-ja="プライバシーへの配慮。" data-en="Privacy first">プライバシーへの配慮。</h4>
+      <p data-ja="スクリーンショットは参加者とイベントの間だけに存在します。Instagram連携なし、データ販売なし。" data-en="Screenshots stay between the participant and the event. No Instagram login, no data sold.">スクリーンショットは参加者とイベントの間だけに存在します。Instagram連携なし、データ販売なし。</p>
     </div>
   </div>
 </div>
 
+<!-- CONTACT -->
 <div class="contact-section" id="contact">
-  <h2>Bring Friendzoned to your next event.</h2>
-  <p class="sub">Currently accepting a small number of pilot events in Tokyo.<br>Drop your details and we'll be in touch within 24 hours.</p>
+  <h2 data-ja="あなたのイベントにも、Friendzonedを。" data-en="Bring Friendzoned to your event.">あなたのイベントにも、Friendzonedを。</h2>
+  <p class="sub"
+     data-ja="ご興味をお持ちの方は、お気軽にご連絡ください。"
+     data-en="Interested? We would love to hear from you.">
+    ご興味をお持ちの方は、お気軽にご連絡ください。
+  </p>
   <form class="form-wrap" action="https://formspree.io/f/placeholder" method="POST">
-    <input type="text"  name="name"    placeholder="Your name"         required>
-    <input type="email" name="email"   placeholder="Email address"     required>
-    <input type="text"  name="event"   placeholder="Event name / type">
-    <textarea           name="message" rows="3" placeholder="Tell us about your event"></textarea>
-    <button type="submit">Send →</button>
+    <input type="text"  name="name"    data-ja-placeholder="お名前" data-en-placeholder="Your name" placeholder="お名前" required>
+    <input type="email" name="email"   data-ja-placeholder="メールアドレス" data-en-placeholder="Email address" placeholder="メールアドレス" required>
+    <input type="text"  name="event"   data-ja-placeholder="イベント名 / 種類" data-en-placeholder="Event name / type" placeholder="イベント名 / 種類">
+    <textarea           name="message" rows="3" data-ja-placeholder="イベントについて教えてください" data-en-placeholder="Tell us about your event" placeholder="イベントについて教えてください"></textarea>
+    <button type="submit" data-ja="送信する →" data-en="Send →">送信する →</button>
   </form>
 </div>
 
 <footer>
   <span class="footer-logo">Friendzoned™</span>
-  <span class="footer-note">Tokyo, 2025</span>
+  <span class="footer-note" data-ja="東京、2025" data-en="Tokyo, 2025">東京、2025</span>
 </footer>
+
+<script>
+  let isEN = false;
+
+  function toggleLang() {
+    isEN = !isEN;
+    document.querySelector('.lang-toggle').textContent = isEN ? 'JA' : 'EN';
+
+    document.querySelectorAll('[data-ja]').forEach(el => {
+      const text = isEN ? el.dataset.en : el.dataset.ja;
+      if (text !== undefined) el.innerHTML = text;
+    });
+
+    document.querySelectorAll('[data-ja-placeholder]').forEach(el => {
+      el.placeholder = isEN ? el.dataset.enPlaceholder : el.dataset.jaPlaceholder;
+    });
+
+    document.documentElement.lang = isEN ? 'en' : 'ja';
+    document.title = isEN
+      ? 'Friendzoned\u2122 \u2014 One mutual changes everything.'
+      : 'Friendzoned\u2122 \u2014 \u4e00\u4eba\u306e\u5171\u901a\u306e\u53cb\u9054\u304c\u3001\u3059\u3079\u3066\u3092\u5909\u3048\u308b\u3002';
+  }
+</script>
 
 </body>
 </html>
