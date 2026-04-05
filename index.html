@@ -178,20 +178,22 @@
 
   .step {
     display: grid;
-    grid-template-columns: 2.5rem 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1.5rem 1fr;
+    gap: 1.2rem;
     padding: 2rem 0;
     border-bottom: 1px solid var(--border);
-    align-items: start;
+    align-items: center;
   }
   .step:first-child { border-top: 1px solid var(--border); }
 
   .step-num {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--mid);
-    letter-spacing: 0.1em;
-    padding-top: 0.25rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--orange);
+    background: transparent;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
   }
 
   .step h3 {
@@ -280,6 +282,7 @@
     letter-spacing: -0.02em;
     line-height: 1.2;
     margin-bottom: 1rem;
+    color: var(--dark);
   }
 
   .contact-section .sub {
@@ -386,7 +389,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <p class="eyebrow fade" data-ja="イベント主催者へ" data-en="For event organizers">イベント主催者へ</p>
+  <p class="eyebrow fade" data-ja="" data-en="" style="display:none"></p>
   <h1 class="fade">
     <span data-ja="「え、なんで" data-en="&quot;Wait,">「え、なんで</span><br>
     <span class="accent" data-ja="この人知ってるの？」" data-en="you know them too?&quot;">この人知ってるの？」</span>
@@ -405,31 +408,31 @@
 <!-- HOW IT WORKS -->
 <div class="section" id="how">
   <p class="section-label" data-ja="仕組み" data-en="How it works">仕組み</p>
-  <p class="section-heading" data-ja="「どこ出身？」「大学は？」もう聞かなくていい。" data-en="No more &quot;Where are you from?&quot;<br>No more &quot;Where did you go to school?&quot;">「どこ出身？」「大学は？」もう聞かなくていい。</p>
+  <p class="section-heading" data-ja='<span style="display:block;margin-bottom:0.3em">「どこ出身？」「大学は？」</span><span style="color:var(--orange)">もう、聞かなくていい。</span>' data-en='<span style="display:block;margin-bottom:0.2em">"Where are you from?"</span><span style="display:block;margin-bottom:0.8em">"Where did you go to school?"</span><span style="color:var(--orange)">Skip that convo.</span>'><span style="display:block;margin-bottom:0.3em">「どこ出身？」「大学は？」</span><span style="color:var(--orange)">もう、聞かなくていい。</span></p>
   <div class="steps">
     <div class="step">
-      <span class="step-num">01</span>
+    <div class="step-num"></div>
       <div>
         <h3 data-ja="イベント前に、スクショを送るだけ。" data-en="Upload before the event">イベント前に、スクショを送るだけ。</h3>
         <p data-ja="数日前に、参加者の皆さんにInstagramのフォロー中リストのスクリーンショットを5枚送っていただきます。アカウント連携も、パスワード入力も必要ありません。" data-en="A few days ahead, attendees upload 5 screenshots of their Instagram following list. No account linking, no passwords required.">数日前に、参加者の皆さんにInstagramのフォロー中リストのスクリーンショットを5枚送っていただきます。アカウント連携も、パスワード入力も必要ありません。</p>
       </div>
     </div>
     <div class="step">
-      <span class="step-num">02</span>
+      <div class="step-num"></div>
       <div>
         <h3 data-ja="繋がりを、自動でマッピング。" data-en="Friendzoned maps the connections">繋がりを、自動でマッピング。</h3>
         <p data-ja="システムがすべてのリストを照合します。誰と誰が繋がっているか、共通の知人は何人いるか。会場に誰かが入る前に、すべての処理が完了しています。" data-en="Our system reads and cross-references every list. It figures out who knows who and how many people they have in common. All done before anyone arrives.">システムがすべてのリストを照合します。誰と誰が繋がっているか、共通の知人は何人いるか。会場に誰かが入る前に、すべての処理が完了しています。</p>
       </div>
     </div>
     <div class="step">
-      <span class="step-num">03</span>
+      <div class="step-num"></div>
       <div>
         <h3 data-ja="入場時に、QRをスキャン。" data-en="Scan on arrival">入場時に、QRをスキャン。</h3>
         <p data-ja="ドアでQRコードをスキャンすると、共通の知人がいる参加者の一覧と、それぞれへの会話のきっかけが表示されます。" data-en="At the door, guests scan a QR code. They instantly see which attendees share mutual connections with them, along with a suggested way to start the conversation.">ドアでQRコードをスキャンすると、共通の知人がいる参加者の一覧と、それぞれへの会話のきっかけが表示されます。</p>
       </div>
     </div>
     <div class="step">
-      <span class="step-num">04</span>
+      <div class="step-num"></div>
       <div>
         <h3 data-ja="もう、初対面じゃない。" data-en="Not strangers anymore">もう、初対面じゃない。</h3>
         <p data-ja="「え、○○さんのこと知ってるの？」その一言が、距離を一気に縮めます。共通の友達がいるだけで、初めて会う相手でも不思議と安心感が生まれます。" data-en="&quot;Wait, you know Sho too?&quot; That one line does all the work. A mutual friend is all it takes to make a stranger feel familiar.">「え、○○さんのこと知ってるの？」その一言が、距離を一気に縮めます。共通の友達がいるだけで、初めて会う相手でも不思議と安心感が生まれます。</p>
@@ -461,7 +464,7 @@
 
 <!-- VALUE PROPS -->
 <div class="section">
-  <p class="section-label" data-ja="主催者にとっての価値" data-en="For organizers">主催者にとっての価値</p>
+  <p class="section-label" data-ja="主催者にとってのメリット" data-en="For organizers">主催者にとってのメリット</p>
   <div class="value-grid">
     <div class="value-cell">
       <h4 data-ja="出会いの質が変わる。" data-en="Better connections">出会いの質が変わる。</h4>
@@ -484,13 +487,13 @@
 
 <!-- CONTACT -->
 <div class="contact-section" id="contact">
-  <h2 data-ja="あなたのイベントにも、Friendzonedを。" data-en="Bring Friendzoned to your event.">あなたのイベントにも、Friendzonedを。</h2>
+  <h2 data-ja="あなたのイベントにも、<span style='color:var(--orange)'>Friendzonedを。</span>" data-en="Bring <span style='color:var(--orange)'>Friendzoned™</span> to your event.">あなたのイベントにも、<span style="color:var(--orange)">Friendzonedを。</span></h2>
   <p class="sub"
      data-ja="ご興味をお持ちの方は、お気軽にご連絡ください。"
      data-en="Interested? We would love to hear from you.">
     ご興味をお持ちの方は、お気軽にご連絡ください。
   </p>
-  <form class="form-wrap" action="https://formspree.io/f/placeholder" method="POST">
+  <form class="form-wrap" action="javascript:void(0)" method="POST">
     <input type="text"  name="name"    data-ja-placeholder="お名前" data-en-placeholder="Your name" placeholder="お名前" required>
     <input type="email" name="email"   data-ja-placeholder="メールアドレス" data-en-placeholder="Email address" placeholder="メールアドレス" required>
     <input type="text"  name="event"   data-ja-placeholder="イベント名 / 種類" data-en-placeholder="Event name / type" placeholder="イベント名 / 種類">
@@ -501,7 +504,7 @@
 
 <footer>
   <span class="footer-logo">Friendzoned™</span>
-  <span class="footer-note" data-ja="東京、2025" data-en="Tokyo, 2025">東京、2025</span>
+  <span class="footer-note"></span>
 </footer>
 
 <script>
